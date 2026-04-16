@@ -2,8 +2,12 @@ package test;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import pom.ActitimeHomePage;
@@ -24,7 +28,7 @@ public class CreateNewCustomerTest {
 		login.loginMethod();
 
 		CreateNewCustomer customer = new CreateNewCustomer(driver);
-		customer.createMethod();
+		customer.createMethod(driver);
 
 		ActitimeHomePage logout = new ActitimeHomePage(driver);
 		logout.logoutMethod();
